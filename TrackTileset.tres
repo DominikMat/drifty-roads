@@ -1,0 +1,42 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://dyo6o23gnmll3"]
+
+[ext_resource type="Texture2D" uid="uid://cernonciqb617" path="res://track-atla_pixels-export.png" id="1_ei1ln"]
+[ext_resource type="Texture2D" uid="uid://bw712dqahoq38" path="res://track-atlas.png" id="1_k7qna"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w215u"]
+texture = ExtResource("1_k7qna")
+texture_region_size = Vector2i(80, 80)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4qq6a"]
+texture = ExtResource("1_ei1ln")
+2:2/0 = 0
+1:2/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+4:3/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+4:0/0 = 0
+
+[resource]
+sources/2 = SubResource("TileSetAtlasSource_4qq6a")
+sources/1 = SubResource("TileSetAtlasSource_w215u")

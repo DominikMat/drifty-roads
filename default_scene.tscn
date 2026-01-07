@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwqaw3twejh56"]
+
+[ext_resource type="TileSet" uid="uid://dyo6o23gnmll3" path="res://TrackTileset.tres" id="1_thv0e"]
+[ext_resource type="Script" path="res://Car.gd" id="2_fv3gp"]
+[ext_resource type="Texture2D" uid="uid://ddvunmb8rw11q" path="res://car_sprite.png" id="3_t6khf"]
+[ext_resource type="Texture2D" uid="uid://ds56ge1f66gw3" path="res://car_wheel.png" id="4_2xtd5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5wdo"]
+size = Vector2(200, 95)
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(522, 312)
+
+[node name="Car" type="Area2D" parent="."]
+scale = Vector2(0.617, 0.617)
+script = ExtResource("2_fv3gp")
+cornering_stiffness_front = 4.0
+cornering_stiffness_rear = 2.5
+maximum_tyre_grip = 3.5
+min_trail_opacity = 0.4
+
+[node name="car body" type="Sprite2D" parent="Car"]
+texture = ExtResource("3_t6khf")
+
+[node name="wheel fl" type="Sprite2D" parent="Car/car body"]
+position = Vector2(45.415, -43.7932)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_2xtd5")
+
+[node name="wheel fr" type="Sprite2D" parent="Car/car body"]
+position = Vector2(45.415, 34.0613)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_2xtd5")
+
+[node name="wheel bl" type="Sprite2D" parent="Car/car body"]
+position = Vector2(-62.7701, -43.7468)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_2xtd5")
+
+[node name="wheel br" type="Sprite2D" parent="Car/car body"]
+position = Vector2(-62.7701, 34.1077)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_2xtd5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Car"]
+visible = false
+scale = Vector2(0.616537, 0.616537)
+shape = SubResource("RectangleShape2D_f5wdo")
+
+[node name="Camera2D" type="Camera2D" parent="Car"]
+position = Vector2(0, -1)
+rotation = 1.5708
+zoom = Vector2(0.5, 0.5)
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = -10
+scale = Vector2(48, 48)
+tile_set = ExtResource("1_thv0e")
+format = 2
+layer_0/tile_data = PackedInt32Array(-1, 65538, 1, -65536, 131074, 0, 0, 131074, 3, 1, 262146, 3, -65535, 2, 2, -65534, 65538, 2, 2, 131074, 2, 65537, 196610, 1, 65538, 131074, 1, 65536, 65538, 0, 131072, 262146, 2, 131073, 196610, 1, 131074, 131074, 0, -131070, 131074, 0, -131071, 262146, 0, -131072, 262146, 0, -65537, 262146, 2, -65538, 262146, 0, -65539, 262146, 3, -65540, 262146, 0, -65541, 2, 2, -6, 2, 2, 65529, 2, 2, 131065, 196610, 0, 196601, 65538, 1, 196602, 262146, 2, 196603, 262146, 0, 196607, 131074, 3, 131071, 131074, 0, 131070, 65538, 1, 65533, 65538, 1, 65532, 131074, 1, 131067, 131074, 1, 131066, 65538, 0, 65531, 65538, 0, 65534, 131074, 2, -3, 196610, 3, -4, 65538, 0, 196604, 131074, 3, 196605, 262146, 2, 196606, 262146, 0, 65530, 65538, 2, -5, 65538, 2, -131075, 65538, 0, -131073, 131074, 0, -131074, 262146, 0, 65535, 262146, 0, 196609, 262146, 1, 196610, 131074, 1, 196608, 65538, 1, 262145, 131074, 1, 262144, 262146, 0, 327679, 262146, 0, 327678, 262146, 0, 327677, 262146, 0, 327676, 131074, 3, 262138, 2, 3, 262139, 65538, 3, 327675, 2, 3, 262140, 65538, 0, 262141, 131074, 1, 131068, 65538, 0, 131069, 131074, 0)
