@@ -232,6 +232,5 @@ func _process(_delta: float) -> void:
 		distance_vertical_traveled = current_distance_vert_traveled
 		car_vertical_distance_traveled.emit(global_position.y)
 
-
-func _on_game_started_from_menu() -> void:
+func _on_game_started() -> void:
 	car_movement_paused = false

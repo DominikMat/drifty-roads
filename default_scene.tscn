@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://dwqaw3twejh56"]
+[gd_scene load_steps=49 format=4 uid="uid://dwqaw3twejh56"]
 
 [ext_resource type="Script" uid="uid://liac742truf7" path="res://Code/TitleCard.gd" id="1_w4y88"]
 [ext_resource type="Script" uid="uid://dym8fnwqbclur" path="res://addons/textcurve/TextCurve.gd" id="2_07x24"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://d218yx0d1ilsn" path="res://addons/rmsmartshape/normal_range.gd" id="9_pb66d"]
 [ext_resource type="PackedScene" uid="uid://c7qwpbi2w0ieu" path="res://Roads/road_pattern_test.tscn" id="10_pfcqy"]
 [ext_resource type="PackedScene" uid="uid://uuqteqwet680" path="res://Roads/road_pattern_test_2.tscn" id="11_qp6l0"]
+[ext_resource type="Resource" uid="uid://0amx2vl8utgj" path="res://Roads/road_material_ss2d.tres" id="13_pb66d"]
 
 [sub_resource type="Resource" id="Resource_qp6l0"]
 script = ExtResource("4_k7gcl")
@@ -59,7 +60,7 @@ _points = {
 4: SubResource("Resource_ls2x0")
 }
 _point_order = PackedInt32Array(3, 2, 1, 4)
-_next_key = 9
+_next_key = 10
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ls2x0"]
 _surfaces = [{
@@ -111,6 +112,117 @@ font = SubResource("SystemFont_f3v6l")
 font_size = 60
 font_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_qp6l0"]
+resource_name = "title_card_move"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-700, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_feteq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pb66d"]
+_data = {
+&"RESET": SubResource("Animation_feteq"),
+&"title_card_move": SubResource("Animation_qp6l0")
+}
+
+[sub_resource type="Resource" id="Resource_8rrh5"]
+script = ExtResource("4_k7gcl")
+position = Vector2(188.35706, 951.07904)
+texture_idx = 3
+width = 11.999999999999975
+
+[sub_resource type="Resource" id="Resource_h172y"]
+script = ExtResource("4_k7gcl")
+position = Vector2(494.7308, 610.35785)
+point_in = Vector2(-164.32419, 10.648084)
+point_out = Vector2(113.533615, -19.35504)
+texture_idx = 4
+width = 11.999999999999975
+
+[sub_resource type="Resource" id="Resource_3wpoy"]
+script = ExtResource("4_k7gcl")
+position = Vector2(975.20764, 178.17644)
+point_in = Vector2(22.623192, 407.21722)
+point_out = Vector2(-22.623192, -407.21722)
+texture_idx = 7
+width = 12.0
+
+[sub_resource type="Resource" id="Resource_0xs11"]
+script = ExtResource("5_jsw5h")
+_points = {
+4: SubResource("Resource_8rrh5"),
+5: SubResource("Resource_h172y"),
+8: SubResource("Resource_3wpoy")
+}
+_point_order = PackedInt32Array(4, 5, 8)
+_next_key = 11
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_n120w"]
+_surfaces = [{
+"aabb": AABB(109.51027, 177.64902, 0, 955.6958, 816.8257, 1e-05),
+"attribute_data": PackedByteArray("/////wAAAAAAAAAAAAAAAAAAAAD/////AAAAAAAAgD8AAAAAAACAP/////9spT5AAACAP2ylPkAAAIA//////2ylPkAAAAAAbKU+QAAAAAD/////X+uFQAAAgD9f64VAAACAP/////9f64VAAAAAAF/rhUAAAAAA/////xTPq0AAAIA/FM+rQAAAgD//////FM+rQAAAAAAUz6tAAAAAAP////+Kv71AAACAP4q/vUAAAIA//////4q/vUAAAAAAir+9QAAAAAD/////78fOQAAAgD/vx85AAACAP//////vx85AAAAAAO/HzkAAAAAA/////4vw3kAAAIA/i/DeQAAAgD//////i/DeQAAAAACL8N5AAAAAAP////8IhO5AAACAPwiE7kAAAIA//////wiE7kAAAAAACITuQAAAAAD/////g0EXQQAAgD+DQRdBAACAP/////+DQRdBAAAAAINBF0EAAAAA/////3ZXLEEAAIA/dlcsQQAAgD//////dlcsQQAAAAB2VyxBAAAAAP////971UJBAACAP3vVQkEAAIA//////3vVQkEAAAAAe9VCQQAAAAD/////llxOQQAAgD+WXE5BAACAP/////+WXE5BAAAAAJZcTkEAAAAA/////7oOWkEAAIA/ug5aQQAAgD//////ug5aQQAAAAC6DlpBAAAAAP////99BWZBAACAP30FZkEAAIA//////30FZkEAAAAAfQVmQQAAAAD/////sXRyQQAAgD+xdHJBAACAP/////+xdHJBAAAAALF0ckEAAAAA//////+pf0EAAIA//6l/QQAAgD///////6l/QQAAAAD/qX9BAAAAAP/////8A4dBAACAP/wDh0EAAIA///////wDh0EAAAAA/AOHQQAAAAD///////6OQQAAgD///o5BAACAP////////o5BAAAAAP/+jkEAAAAA/////wAAmEEAAIA/AACYQQAAgD//////AACYQQAAAAAAAJhBAAAAAA=="),
+"format": 34359742527,
+"index_count": 108,
+"index_data": PackedByteArray("AAABAAIAAAACAAMAAwACAAQAAwAEAAUABQAEAAYABQAGAAcABwAGAAgABwAIAAkACQAIAAoACQAKAAsACwAKAAwACwAMAA0ADQAMAA4ADQAOAA8ADwAOABAADwAQABEAEQAQABIAEQASABMAEwASABQAEwAUABUAFQAUABYAFQAWABcAFwAWABgAFwAYABkAGQAYABoAGQAaABsAGwAaABwAGwAcAB0AHQAcAB4AHQAeAB8AHwAeACAAHwAgACEAIQAgACIAIQAiACMAIwAiACQAIwAkACUA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 38,
+"vertex_data": PackedByteArray("QgXbQrzrYkQAAAAAGJqFQ2KeeEQAAAAAMdyxQyNPUEQAAAAA3h9MQ+8LOEQAAAAA8EfFQ4ApQ0QAAAAAaEyAQ3hCJkQAAAAAbjjbQ1WWN0QAAAAAslCeQ+N0FkQAAAAACpHkQ1fbM0QAAAAA5t6wQ1kFD0QAAAAAYnftQ+0ZMUQAAAAAxOvEQyvtCEQAAAAABLD0Q1uWL0QAAAAA0oXbQ9lhBEQAAAAAl6r+Q5bKLkQAAAAAfxDwQzhjAkQAAAAArHQfRIQUKkQAAAAAcPwWRM3E+0MAAAAAP2M2RKGWJEQAAAAAZ+soRF5N80MAAAAAHEFORDo1G0QAAAAAesI6RLVM5UMAAAAAUd1aREb6E0QAAAAA5w5CRF3d3EMAAAAAro1mRGEmC0QAAAAA5vlIRJZ40kMAAAAAg1JxRNRLAEQAAAAAHQJPRPxdxkMAAAAApq56RF6d5kMAAAAApiNURLwpuEMAAAAAfxSBRGVryEMAAAAAlFZYRIsyp0MAAAAAlrGDRIA+pkMAAAAAO3hbROifkkMAAAAAMxGFROxPgEMAAAAAXEJdRKA5c0MAAAAAmCaFRDC0MkMAAAAAY01dRCamMUMAAAAA/3//f26tR2n/f/9/XK1Qaf9//3/4sQJn/3//f/yxAWf/f/9/V7rTYv9//39autJi/3//f7nCol7/f/9/scKmXv9//38Oy3ha/3//f0HLXlr/f/9/fdTAVf9//38+1WBV/3//f73jIE7/f/9/8eKGTv9//3/E7p1I/3//f2jtS0n/f/9/V+tTSv9//39760FK/3//f2fhS0//f/9/hOE9T/9//3971sFU/3//f2bWzFT/f/9/Ec12Wf9//38JzXpZ/3//f1PE1V3/f/9/dMTEXf9//3+4uqNi/3//f9C6lmL/f/9/H7DvZ/9//38msOtn/3//f2eky23/f/9/W6TRbf9//39ol0p0/3//f0yXWHT/f/9/DYl4e/9//3+5iKJ7/3//f+uAiX//f/9/VYDUfw==")
+}]
+
+[sub_resource type="Resource" id="Resource_wopae"]
+script = ExtResource("5_pfcqy")
+texture = ExtResource("6_qp6l0")
+mesh = SubResource("ArrayMesh_n120w")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5wdo"]
 size = Vector2(281.28046, 92.18941)
 
@@ -136,7 +248,7 @@ layer = 100
 [node name="TitleCard" type="Node2D" parent="UI Layer"]
 script = ExtResource("1_w4y88")
 
-[node name="SS2D_Shape" type="Node2D" parent="UI Layer/TitleCard"]
+[node name="game title road" type="Node2D" parent="UI Layer/TitleCard"]
 script = ExtResource("3_qgvpt")
 _points = SubResource("Resource_wcy3h")
 _meshes = Array[ExtResource("5_pfcqy")]([SubResource("Resource_v2yrv")])
@@ -172,14 +284,29 @@ text = "level select"
 flat = true
 
 [node name="play button" type="Button" parent="UI Layer/TitleCard"]
-offset_left = 173.0
-offset_top = 306.0
-offset_right = 383.0
-offset_bottom = 451.0
+offset_left = 165.99998
+offset_top = 309.99997
+offset_right = 376.0
+offset_bottom = 454.99997
 scale = Vector2(0.47887802, 0.47887802)
 theme_override_font_sizes/font_size = 100
 text = "play"
 flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI Layer/TitleCard"]
+reset_on_save = false
+libraries = {
+&"": SubResource("AnimationLibrary_pb66d")
+}
+
+[node name="beginning road" type="Node2D" parent="."]
+position = Vector2(-40, 0)
+scale = Vector2(1.0089183, 1.0089183)
+script = ExtResource("3_qgvpt")
+_points = SubResource("Resource_0xs11")
+_meshes = Array[ExtResource("5_pfcqy")]([SubResource("Resource_wopae")])
+shape_material = ExtResource("13_pb66d")
+metadata/_custom_type_script = "uid://dhdc4b8yddyej"
 
 [node name="Car" type="Area2D" parent="." groups=["player"]]
 position = Vector2(270, 775)
@@ -226,6 +353,7 @@ offset = Vector2(0, -350)
 zoom = Vector2(0.77, 0.77)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Car/Camera2D"]
+visible = false
 
 [node name="HSlider" type="HSlider" parent="Car/Camera2D/CanvasLayer"]
 offset_left = 105.0
@@ -273,10 +401,13 @@ amount = 30
 process_material = SubResource("ParticleProcessMaterial_68su5")
 
 [node name="Map" type="Node2D" parent="."]
-position = Vector2(270, 775)
-rotation = 0.67741036
 script = ExtResource("9_6pnsd")
 road_patterns = Array[PackedScene]([ExtResource("10_pfcqy"), ExtResource("11_qp6l0")])
 
+[node name="MapStartPoint" type="Marker2D" parent="Map"]
+position = Vector2(944, 191)
+
+[connection signal="pressed" from="UI Layer/TitleCard/play button" to="UI Layer/TitleCard" method="_on_play_button_pressed"]
+[connection signal="pressed" from="UI Layer/TitleCard/play button" to="Car" method="_on_game_started"]
 [connection signal="car_vertical_distance_traveled" from="Car" to="Map" method="_on_car_car_vertical_distance_traveled"]
 [connection signal="area_entered" from="Crate" to="Crate" method="_on_area_entered"]

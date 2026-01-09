@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="SS2D_Material_Shape" load_steps=9 format=3 uid="uid://0amx2vl8utgj"]
+
+[ext_resource type="Script" uid="uid://0lhxan4cqrc1" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="1_41vbd"]
+[ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="2_6rpq2"]
+[ext_resource type="Script" uid="uid://d0xjijisx1woh" path="res://addons/rmsmartshape/materials/edge_material.gd" id="2_74v2n"]
+[ext_resource type="Texture2D" uid="uid://8mbjw5sfk4mn" path="res://Art/roadpattern.png" id="3_74v2n"]
+[ext_resource type="Script" uid="uid://d218yx0d1ilsn" path="res://addons/rmsmartshape/normal_range.gd" id="4_dkvsd"]
+
+[sub_resource type="Resource" id="Resource_5ffge"]
+script = ExtResource("2_74v2n")
+textures = Array[Texture2D]([ExtResource("3_74v2n")])
+metadata/_custom_type_script = "uid://d0xjijisx1woh"
+
+[sub_resource type="Resource" id="Resource_axmav"]
+script = ExtResource("4_dkvsd")
+distance = 360.0
+
+[sub_resource type="Resource" id="Resource_yguli"]
+script = ExtResource("1_41vbd")
+edge_material = SubResource("Resource_5ffge")
+normal_range = SubResource("Resource_axmav")
+metadata/_custom_type_script = "uid://0lhxan4cqrc1"
+
+[resource]
+script = ExtResource("2_6rpq2")
+_edge_meta_materials = Array[ExtResource("1_41vbd")]([SubResource("Resource_yguli")])
+metadata/_custom_type_script = "uid://nc5bfedvnpgm"

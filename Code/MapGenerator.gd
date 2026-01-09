@@ -4,10 +4,12 @@ extends Node2D
 @export var car_next_tile_seperation_distance_px: int = 2000
 @export var road_patterns: Array[PackedScene] 
 
-
+@onready var map_start_point: Marker2D = $MapStartPoint
 var next_pattern_connection_point := Vector2.ZERO
 
 func _ready() -> void:
+	if map_start_point:
+		next_pattern_connection_point = map_start_point.position
 	generate_map()
 
 
