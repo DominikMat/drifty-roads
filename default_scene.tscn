@@ -1,60 +1,282 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwqaw3twejh56"]
+[gd_scene load_steps=39 format=4 uid="uid://dwqaw3twejh56"]
 
-[ext_resource type="TileSet" uid="uid://dyo6o23gnmll3" path="res://TrackTileset.tres" id="1_thv0e"]
-[ext_resource type="Script" path="res://Car.gd" id="2_fv3gp"]
-[ext_resource type="Texture2D" uid="uid://ddvunmb8rw11q" path="res://car_sprite.png" id="3_t6khf"]
-[ext_resource type="Texture2D" uid="uid://ds56ge1f66gw3" path="res://car_wheel.png" id="4_2xtd5"]
+[ext_resource type="Script" uid="uid://liac742truf7" path="res://Code/TitleCard.gd" id="1_w4y88"]
+[ext_resource type="Script" uid="uid://dym8fnwqbclur" path="res://addons/textcurve/TextCurve.gd" id="2_07x24"]
+[ext_resource type="Script" uid="uid://cjykjgcbid4p5" path="res://Code/Car.gd" id="3_b3y2m"]
+[ext_resource type="Script" uid="uid://dhdc4b8yddyej" path="res://addons/rmsmartshape/shapes/shape.gd" id="3_qgvpt"]
+[ext_resource type="Texture2D" uid="uid://ddvunmb8rw11q" path="res://Art/car_sprite.png" id="4_f3v6l"]
+[ext_resource type="Script" uid="uid://bwcf4pjgprn0k" path="res://addons/rmsmartshape/shapes/point.gd" id="4_k7gcl"]
+[ext_resource type="Texture2D" uid="uid://ds56ge1f66gw3" path="res://Art/car_wheel.png" id="5_aebm5"]
+[ext_resource type="Script" uid="uid://bo5f7qe27jfje" path="res://addons/rmsmartshape/shapes/point_array.gd" id="5_jsw5h"]
+[ext_resource type="Script" uid="uid://llobjh5hvry" path="res://addons/rmsmartshape/shapes/mesh.gd" id="5_pfcqy"]
+[ext_resource type="Script" uid="uid://0lhxan4cqrc1" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="6_6pnsd"]
+[ext_resource type="PackedScene" uid="uid://dscl6yn6t2h6t" path="res://Scenes/crate.tscn" id="6_qgvpt"]
+[ext_resource type="Texture2D" uid="uid://8mbjw5sfk4mn" path="res://Art/roadpattern.png" id="6_qp6l0"]
+[ext_resource type="TileSet" uid="uid://dyo6o23gnmll3" path="res://Roads/TrackTileset.tres" id="7_k7gcl"]
+[ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="7_pfcqy"]
+[ext_resource type="Script" uid="uid://d0xjijisx1woh" path="res://addons/rmsmartshape/materials/edge_material.gd" id="8_feteq"]
+[ext_resource type="Script" uid="uid://sntxo25a1wq7" path="res://Code/Crate.gd" id="8_jsw5h"]
+[ext_resource type="Script" uid="uid://cow56k5068tvo" path="res://Code/MapGenerator.gd" id="9_6pnsd"]
+[ext_resource type="Script" uid="uid://d218yx0d1ilsn" path="res://addons/rmsmartshape/normal_range.gd" id="9_pb66d"]
+[ext_resource type="PackedScene" uid="uid://c7qwpbi2w0ieu" path="res://Roads/road_pattern_test.tscn" id="10_pfcqy"]
+[ext_resource type="PackedScene" uid="uid://uuqteqwet680" path="res://Roads/road_pattern_test_2.tscn" id="11_qp6l0"]
+
+[sub_resource type="Resource" id="Resource_qp6l0"]
+script = ExtResource("4_k7gcl")
+position = Vector2(109.90195, 309.9091)
+point_in = Vector2(42.727264, -191.81818)
+point_out = Vector2(-27.392914, 127.67844)
+texture_idx = -1
+width = 6.1
+
+[sub_resource type="Resource" id="Resource_feteq"]
+script = ExtResource("4_k7gcl")
+position = Vector2(301.27274, 137.01448)
+point_in = Vector2(45.28192, -22.141624)
+point_out = Vector2(-57.6333, 33.643845)
+texture_idx = -1
+width = 5.6
+
+[sub_resource type="Resource" id="Resource_pb66d"]
+script = ExtResource("4_k7gcl")
+position = Vector2(372.95026, -125.4456)
+point_in = Vector2(-30.25, -91.96001)
+point_out = Vector2(38.72003, 153.67)
+texture_idx = 4
+width = 4.7
+
+[sub_resource type="Resource" id="Resource_ls2x0"]
+script = ExtResource("4_k7gcl")
+position = Vector2(-63.182526, 391.4117)
+width = 4.2
+
+[sub_resource type="Resource" id="Resource_wcy3h"]
+script = ExtResource("5_jsw5h")
+_points = {
+1: SubResource("Resource_qp6l0"),
+2: SubResource("Resource_feteq"),
+3: SubResource("Resource_pb66d"),
+4: SubResource("Resource_ls2x0")
+}
+_point_order = PackedInt32Array(3, 2, 1, 4)
+_next_key = 9
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ls2x0"]
+_surfaces = [{
+"aabb": AABB(-70.3838, -131.74333, 0, 491.08002, 566.3688, 1e-05),
+"attribute_data": PackedByteArray("/////wAAAAAAAAAAAAAAAAAAAAD/////AAAAAAAAgD8AAAAAAACAP/////8MUFY/AACAPwxQVj8AAIA//////wxQVj8AAAAADFBWPwAAAAD/////CIzIPwAAgD8IjMg/AACAP/////8IjMg/AAAAAAiMyD8AAAAA/////4I8DUAAAIA/gjwNQAAAgD//////gjwNQAAAAACCPA1AAAAAAP////8lYjFAAACAPyViMUAAAIA//////yViMUAAAAAAJWIxQAAAAAD/////fFhRQAAAgD98WFFAAACAP/////98WFFAAAAAAHxYUUAAAAAA/////xtzbUAAAIA/G3NtQAAAgD//////G3NtQAAAAAAbc21AAAAAAP////8v34JAAACAPy/fgkAAAIA//////y/fgkAAAAAAL9+CQAAAAAD/////hDqIQAAAgD+EOohAAACAP/////+EOohAAAAAAIQ6iEAAAAAA/////wkTjUAAAIA/CRONQAAAgD//////CRONQAAAAAAJE41AAAAAAP////9VFJNAAACAP1UUk0AAAIA//////1UUk0AAAAAAVRSTQAAAAAD/////xxqZQAAAgD/HGplAAACAP//////HGplAAAAAAMcamUAAAAAA/////8Z/skAAAIA/xn+yQAAAgD//////xn+yQAAAAADGf7JAAAAAAP////8B/79AAACAPwH/v0AAAIA//////wH/v0AAAAAAAf+/QAAAAAD/////Kx7HQAAAgD8rHsdAAACAP/////8rHsdAAAAAACsex0AAAAAA/////92yzkAAAIA/3bLOQAAAgD//////3bLOQAAAAADdss5AAAAAAP////+c/dZAAACAP5z91kAAAIA//////5z91kAAAAAAnP3WQAAAAAD/////QkvgQAAAgD9CS+BAAACAP/////9CS+BAAAAAAEJL4EAAAAAA/////+Du6kAAAIA/4O7qQAAAgD//////4O7qQAAAAADg7upAAAAAAP////9cPPdAAACAP1w890AAAIA//////1w890AAAAAAXDz3QAAAAAD/////ogkLQQAAgD+iCQtBAACAP/////+iCQtBAAAAAKIJC0EAAAAA/////zSTEEEAAIA/NJMQQQAAgD//////NJMQQQAAAAA0kxBBAAAAAP////94ehVBAACAP3h6FUEAAIA//////3h6FUEAAAAAeHoVQQAAAAD/////TOwZQQAAgD9M7BlBAACAP/////9M7BlBAAAAAEzsGUEAAAAA/////3kQHkEAAIA/eRAeQQAAgD//////eRAeQQAAAAB5EB5BAAAAAP/////2BSJBAACAP/YFIkEAAIA///////YFIkEAAAAA9gUiQQAAAAD/////ceAlQQAAgD9x4CVBAACAP/////9x4CVBAAAAAHHgJUEAAAAA/////xOoKUEAAIA/E6gpQQAAgD//////E6gpQQAAAAATqClBAAAAAP////9nWy1BAACAP2dbLUEAAIA//////2dbLUEAAAAAZ1stQQAAAAD/////jFA0QQAAgD+MUDRBAACAP/////+MUDRBAAAAAIxQNEEAAAAA/////z0/OkEAAIA/PT86QQAAgD//////PT86QQAAAAA9PzpBAAAAAP////8AAEBBAACAPwAAQEEAAIA//////wAAQEEAAAAAAABAQQAAAAA="),
+"format": 34359742527,
+"index_count": 186,
+"index_data": PackedByteArray("AAABAAIAAAACAAMAAwACAAQAAwAEAAUABQAEAAYABQAGAAcABwAGAAgABwAIAAkACQAIAAoACQAKAAsACwAKAAwACwAMAA0ADQAMAA4ADQAOAA8ADwAOABAADwAQABEAEQAQABIAEQASABMAEwASABQAEwAUABUAFQAUABYAFQAWABcAFwAWABgAFwAYABkAGQAYABoAGQAaABsAGwAaABwAGwAcAB0AHQAcAB4AHQAeAB8AHwAeACAAHwAgACEAIQAgACIAIQAiACMAIwAiACQAIwAkACUAJQAkACYAJQAmACcAJwAmACgAJwAoACkAKQAoACoAKQAqACsAKwAqACwAKwAsAC0ALQAsAC4ALQAuAC8ALwAuADAALwAwADEAMQAwADIAMQAyADMAMwAyADQAMwA0ADUANQA0ADYANQA2ADcANwA2ADgANwA4ADkAOQA4ADoAOQA6ADsAOwA6ADwAOwA8AD0APQA8AD4APQA+AD8A"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 64,
+"vertex_data": PackedByteArray("CtHLQ0u+A8MAAAAAOiKpQ7dL7sIAAAAAjbWtQ+lkhsIAAAAAoyLRQxtulcIAAAAA9hquQ4sew8EAAAAAHlnSQwNoqMEAAAAA3YCrQzkXO0EAAAAADbnPQ4Ic10EAAAAAYrqmQ9RmJUIAAAAAWOLJQ766iUIAAAAANougQ8jDgUIAAAAAToTBQyRF0UIAAAAAELaZQ9j9pEIAAAAAOk+3Q1YNBkMAAAAADrGSQ3rTvUIAAAAAAECsQ89zHEMAAAAArQmQQzt4w0IAAAAAc+2lQ1h6JkMAAAAAbQmNQ/ZxyEIAAAAAZTygQ2/OLUMAAAAAmTuJQ6q4zkIAAAAAzdyYQ/NsNUMAAAAAf+OFQzw50kIAAAAA112QQ+5bO0MAAAAA0WFYQxjH5EIAAAAAc/BsQzR3RUMAAAAAc9Q3Q7JP+EIAAAAATypYQx0jTEMAAAAAo4MkQxSBBUMAAAAA5zhRQ5QVUEMAAAAAK0kSQ+LdEUMAAAAA1cdJQ3qxVUMAAAAAmvMAQwjeIUMAAAAAykVCQ/hOXUMAAAAAVgziQkGJNUMAAAAAx2w6Q0PeZ0MAAAAATG3FQgToTEMAAAAASkQyQ9xOdkMAAAAA6lqrQqYLaUMAAAAAG2EqQ7FDhEMAAAAAsHyEQueBlEMAAAAAdY8ZQ9NmoUMAAAAAoKd1QrDUnUMAAAAAYHkRQ8oIrkMAAAAA47hjQp+1o0MAAAAA9UQEQ/9bukMAAAAAyhBPQq5FqEMAAAAAj37nQvqRxEMAAAAA8N82Qiz2q0MAAAAAYMTBQu6LzEMAAAAA/eYZQn4Or0MAAAAAAIeZQvhU0kMAAAAAUbzuQRemsUMAAAAArmxhQi0o1kMAAAAA4iKfQbC5s0MAAAAAtXARQlBb2EMAAAAALjsaQSI6tUMAAAAARUiEQQ5Q2UMAAAAAUNljwWYutkMAAAAA2FGIwZYb2UMAAAAAaPwJwkW2tUMAAAAAiO81wnPr1kMAAAAAzuxfwlW1s0MAAAAAgcSMwhG000MAAAAA/3//f7yT3gn/f/9/KpOVCf9//395i7wF/3//f7SMWgb/f/9/AHl/A/9//39We1QC/3//f2hoywv/f/9/xWqdCv9//3+IWrsS/3//f/NchRH/f/9/O07hGP9//3/WUJQX/3//f2FCzx7/f/9/hEU9Hf9//3+GNLwl/3//fyQ87SH/f/9/jSk4K/9//3/7NIIl/3//fyEm7iz/f/9/oC6vKP9//39fINAv/3//f0Mm3Sz/f/9/jRc4NP9//3/9GoAy/3//f/kYgjP/f/9/BBr9Mv9//38HJPst/3//f9UmlCz/f/9/By98KP9//3+cMrEm/3//f8k4miP/f/9/mzsyIv9//388QuEe/3//f8REnR3/f/9/LktoGv9//39lTUwZ/3//f4lTOhb/f/9/WVVTFf9//3/TXJYR/3//f/5dABH/f/9/G2TxDf9//390YsUO/3//f8pgmg//f/9/gVq/Ev9//3+EVr0U/3//f5FNNxn/f/9/YEtPGv9//39XQVMf/3//fxJA9h//f/9/eTVCJf9//3/zNIUl/3//f8QpHSv/f/9/RircKv9//38jHu0w/3//f6Agry//f/9/ixK6Nv9//3/+EoA2/3//f4EGvjz/f/9/yACbP/9//39vCDdE/3//f3AOOEf/f/9/DxWHSv9//3+VFcpK/3//f0caI00=")
+}]
+
+[sub_resource type="Resource" id="Resource_v2yrv"]
+script = ExtResource("5_pfcqy")
+texture = ExtResource("6_qp6l0")
+mesh = SubResource("ArrayMesh_ls2x0")
+
+[sub_resource type="Resource" id="Resource_h7ps1"]
+script = ExtResource("8_feteq")
+textures = Array[Texture2D]([ExtResource("6_qp6l0")])
+metadata/_custom_type_script = "uid://d0xjijisx1woh"
+
+[sub_resource type="Resource" id="Resource_22mfg"]
+script = ExtResource("9_pb66d")
+distance = 360.0
+
+[sub_resource type="Resource" id="Resource_0hbxv"]
+script = ExtResource("6_6pnsd")
+edge_material = SubResource("Resource_h7ps1")
+normal_range = SubResource("Resource_22mfg")
+metadata/_custom_type_script = "uid://0lhxan4cqrc1"
+
+[sub_resource type="Resource" id="Resource_dxm5d"]
+script = ExtResource("7_pfcqy")
+_edge_meta_materials = Array[ExtResource("6_6pnsd")]([SubResource("Resource_0hbxv")])
+
+[sub_resource type="Curve2D" id="Curve2D_b3y2m"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 56, 292, -43.83052, 93.58489, 43.83052, -93.58489, 166, 240, -38.84297, 38.016525, 38.84297, -38.016525, 237, 86, -47.661156, 49.92975, 47.661156, -49.92975, 390, 30, 0, 0, 0, 0, 443, -98)
+}
+point_count = 5
+
+[sub_resource type="SystemFont" id="SystemFont_f3v6l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_aebm5"]
+font = SubResource("SystemFont_f3v6l")
+font_size = 60
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5wdo"]
-size = Vector2(200, 95)
+size = Vector2(281.28046, 92.18941)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_fl87s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4p7q4"]
+size = Vector2(0.9951762, 0.9918881)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_68su5"]
+particle_flag_disable_z = true
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+gravity = Vector3(0, 98, 0)
+damping_min = 50.000004
+damping_max = 50.000004
+color = Color(0.43, 0.28552002, 0.1892, 1)
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(522, 312)
 
-[node name="Car" type="Area2D" parent="."]
+[node name="UI Layer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="TitleCard" type="Node2D" parent="UI Layer"]
+script = ExtResource("1_w4y88")
+
+[node name="SS2D_Shape" type="Node2D" parent="UI Layer/TitleCard"]
+script = ExtResource("3_qgvpt")
+_points = SubResource("Resource_wcy3h")
+_meshes = Array[ExtResource("5_pfcqy")]([SubResource("Resource_v2yrv")])
+shape_material = SubResource("Resource_dxm5d")
+metadata/_custom_type_script = "uid://dhdc4b8yddyej"
+
+[node name="Game title" type="Path2D" parent="UI Layer/TitleCard"]
+position = Vector2(-49, 100)
+curve = SubResource("Curve2D_b3y2m")
+script = ExtResource("2_07x24")
+text = "     d r i f t y r o a d s"
+label_settings = SubResource("LabelSettings_aebm5")
+
+[node name="customise button" type="Button" parent="UI Layer/TitleCard"]
+offset_left = 282.0
+offset_top = 172.0
+offset_right = 822.0
+offset_bottom = 317.0
+scale = Vector2(0.47887802, 0.47887802)
+theme_override_font_sizes/font_size = 100
+text = "customise
+"
+flat = true
+
+[node name="level select button" type="Button" parent="UI Layer/TitleCard"]
+offset_left = 211.99998
+offset_top = 240.0
+offset_right = 752.0
+offset_bottom = 385.0
+scale = Vector2(0.47887784, 0.47887784)
+theme_override_font_sizes/font_size = 100
+text = "level select"
+flat = true
+
+[node name="play button" type="Button" parent="UI Layer/TitleCard"]
+offset_left = 173.0
+offset_top = 306.0
+offset_right = 383.0
+offset_bottom = 451.0
+scale = Vector2(0.47887802, 0.47887802)
+theme_override_font_sizes/font_size = 100
+text = "play"
+flat = true
+
+[node name="Car" type="Area2D" parent="." groups=["player"]]
+position = Vector2(270, 775)
+rotation = -0.893386
 scale = Vector2(0.617, 0.617)
-script = ExtResource("2_fv3gp")
+collision_layer = 3
+script = ExtResource("3_b3y2m")
 cornering_stiffness_front = 4.0
 cornering_stiffness_rear = 2.5
 maximum_tyre_grip = 3.5
 min_trail_opacity = 0.4
 
 [node name="car body" type="Sprite2D" parent="Car"]
-texture = ExtResource("3_t6khf")
+texture = ExtResource("4_f3v6l")
 
 [node name="wheel fl" type="Sprite2D" parent="Car/car body"]
 position = Vector2(45.415, -43.7932)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("4_2xtd5")
+texture = ExtResource("5_aebm5")
 
 [node name="wheel fr" type="Sprite2D" parent="Car/car body"]
 position = Vector2(45.415, 34.0613)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("4_2xtd5")
+texture = ExtResource("5_aebm5")
 
 [node name="wheel bl" type="Sprite2D" parent="Car/car body"]
 position = Vector2(-62.7701, -43.7468)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("4_2xtd5")
+texture = ExtResource("5_aebm5")
 
 [node name="wheel br" type="Sprite2D" parent="Car/car body"]
 position = Vector2(-62.7701, 34.1077)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("4_2xtd5")
+texture = ExtResource("5_aebm5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Car"]
-visible = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Car" groups=["player"]]
+position = Vector2(-4.051867, -0.8664159)
 scale = Vector2(0.616537, 0.616537)
 shape = SubResource("RectangleShape2D_f5wdo")
 
 [node name="Camera2D" type="Camera2D" parent="Car"]
-position = Vector2(0, -1)
-rotation = 1.5708
-zoom = Vector2(0.5, 0.5)
+rotation = -1.5707964
+offset = Vector2(0, -350)
+zoom = Vector2(0.77, 0.77)
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="Car/Camera2D"]
+
+[node name="HSlider" type="HSlider" parent="Car/Camera2D/CanvasLayer"]
+offset_left = 105.0
+offset_top = 756.0
+offset_right = 504.99997
+offset_bottom = 956.0
+min_value = -1.0
+max_value = 1.0
+step = 0.01
+editable = false
+scrollable = false
+
+[node name="background" parent="." instance=ExtResource("6_qgvpt")]
+visible = false
+position = Vector2(268.96045, -15916.967)
+
+[node name="Tilemap" type="TileMapLayer" parent="."]
+visible = false
 z_index = -10
+use_parent_material = true
+position = Vector2(5, 19)
 scale = Vector2(48, 48)
-tile_set = ExtResource("1_thv0e")
-format = 2
-layer_0/tile_data = PackedInt32Array(-1, 65538, 1, -65536, 131074, 0, 0, 131074, 3, 1, 262146, 3, -65535, 2, 2, -65534, 65538, 2, 2, 131074, 2, 65537, 196610, 1, 65538, 131074, 1, 65536, 65538, 0, 131072, 262146, 2, 131073, 196610, 1, 131074, 131074, 0, -131070, 131074, 0, -131071, 262146, 0, -131072, 262146, 0, -65537, 262146, 2, -65538, 262146, 0, -65539, 262146, 3, -65540, 262146, 0, -65541, 2, 2, -6, 2, 2, 65529, 2, 2, 131065, 196610, 0, 196601, 65538, 1, 196602, 262146, 2, 196603, 262146, 0, 196607, 131074, 3, 131071, 131074, 0, 131070, 65538, 1, 65533, 65538, 1, 65532, 131074, 1, 131067, 131074, 1, 131066, 65538, 0, 65531, 65538, 0, 65534, 131074, 2, -3, 196610, 3, -4, 65538, 0, 196604, 131074, 3, 196605, 262146, 2, 196606, 262146, 0, 65530, 65538, 2, -5, 65538, 2, -131075, 65538, 0, -131073, 131074, 0, -131074, 262146, 0, 65535, 262146, 0, 196609, 262146, 1, 196610, 131074, 1, 196608, 65538, 1, 262145, 131074, 1, 262144, 262146, 0, 327679, 262146, 0, 327678, 262146, 0, 327677, 262146, 0, 327676, 131074, 3, 262138, 2, 3, 262139, 65538, 3, 327675, 2, 3, 262140, 65538, 0, 262141, 131074, 1, 131068, 65538, 0, 131069, 131074, 0)
+tile_map_data = PackedByteArray("AAACAP//AgABAAIAAAACAAAAAgACAAIAAAACAAEAAgACAAEAAAAAAAIAAgAEAAIAAAABAAIAAgADAAEAAAACAAIAAgACAAAAAAACAP7/AgACAAAAAAD8//7/AgAEAAAAAAD7//7/AgAAAAIAAAD6////AgAAAAIAAAD5/wAAAgAAAAIAAAD5/wEAAgADAAAAAAD5/wIAAgABAAEAAAD6/wIAAgAEAAIAAAD7/wIAAgAEAAAAAAD//wIAAgACAAMAAAD8/wAAAgACAAEAAAD7/wEAAgACAAEAAAD6/wEAAgABAAAAAAD7/wAAAgABAAAAAAD8////AgABAAAAAAD8/wIAAgACAAMAAAD9/wIAAgAEAAIAAAD+/wIAAgAEAAAAAAD6/wAAAgABAAIAAAD7////AgABAAIAAAD9//3/AgABAAAAAAD///3/AgACAAAAAAD+//3/AgAEAAAAAAABAAMAAgAEAAEAAAACAAMAAgACAAEAAAAAAAMAAgABAAEAAAABAAQAAgACAAEAAAAAAAQAAgAEAAAAAAD//wQAAgAEAAAAAAD+/wQAAgAEAAAAAAD9/wQAAgAEAAAAAAD8/wQAAgACAAMAAAD6/wMAAgAAAAMAAAD7/wMAAgABAAMAAAD7/wQAAgAAAAMAAAD8/wMAAgABAAAAAAD9/wMAAgACAAEAAAD8/wEAAgABAAAAAAD9//7/AgAEAAMAAAD9////AgADAAMAAAD9/wAAAgABAAEAAAD9/wEAAgACAAAAAAD+//7/AgAEAAAAAAD+/wAAAgACAAIAAAD+/wEAAgABAAEAAAD///7/AgAEAAIAAAD/////AgABAAEAAAD//wAAAgAEAAAAAAD//wEAAgACAAAAAAAAAP7/AgAEAAAAAAAAAP//AgACAAAAAAAAAAAAAgACAAMAAAAAAAEAAgABAAAAAAABAP7/AgAEAAAAAAABAP//AgAAAAIAAAABAAAAAgAEAAMAAAABAAEAAgADAAEAAAAQAAsAAgABAAAAAAAQAAwAAgACAAMAAAARAAsAAgACAAAAAAARAAwAAgAEAAIAAAA=")
+tile_set = ExtResource("7_k7gcl")
+
+[node name="Crate" type="Area2D" parent="."]
+position = Vector2(349.00003, -81)
+scale = Vector2(56.90199, 54.23997)
+collision_mask = 2
+script = ExtResource("8_jsw5h")
+
+[node name="Sprite2D" type="Sprite2D" parent="Crate"]
+modulate = Color(0.38, 0.20880999, 0.17860001, 1)
+z_index = 1
+scale = Vector2(0.99999994, 0.99999994)
+texture = SubResource("CanvasTexture_fl87s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate"]
+position = Vector2(-0.0055146217, 0.0018424988)
+scale = Vector2(0.9999997, 0.9999994)
+shape = SubResource("RectangleShape2D_4p7q4")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Crate"]
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_68su5")
+
+[node name="Map" type="Node2D" parent="."]
+position = Vector2(270, 775)
+rotation = 0.67741036
+script = ExtResource("9_6pnsd")
+road_patterns = Array[PackedScene]([ExtResource("10_pfcqy"), ExtResource("11_qp6l0")])
+
+[connection signal="car_vertical_distance_traveled" from="Car" to="Map" method="_on_car_car_vertical_distance_traveled"]
+[connection signal="area_entered" from="Crate" to="Crate" method="_on_area_entered"]

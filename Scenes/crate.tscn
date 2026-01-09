@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dscl6yn6t2h6t"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_fl87s"]
+
+[node name="background" type="Sprite2D"]
+modulate = Color(0.921569, 0.823529, 0.27451, 1)
+z_index = -2860
+rotation = 3.14159
+scale = Vector2(47662.24, -82291.49)
+texture = SubResource("CanvasTexture_fl87s")

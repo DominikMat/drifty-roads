@@ -1,0 +1,31 @@
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://dyo6o23gnmll3"]
+
+[ext_resource type="Texture2D" uid="uid://cernonciqb617" path="res://Art/track-atla_pixels-export.png" id="1_s6nlh"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_44k44"]
+tile_data = PackedInt32Array(0, 262146, 3, 65536, 196610, 3, 131072, 65538, 1, 196608, 131074, 0, 1, 262146, 0, 131073, 131074, 2, 196609, 65538, 1, 2, 262146, 2, 65538, 65538, 1, 131074, 262146, 0, 196610, 131074, 0, 3, 262146, 0, 65539, 131074, 0, 131075, 131074, 3, 196611, 65538, 0, 4, 262146, 0, 65540, 2, 2, 131076, 262146, 3, 196612, 196610, 1)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4qq6a"]
+texture = ExtResource("1_s6nlh")
+2:2/0 = 0
+1:2/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+4:3/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+4:0/0 = 0
+
+[resource]
+sources/2 = SubResource("TileSetAtlasSource_4qq6a")
+pattern_0 = SubResource("TileMapPattern_44k44")

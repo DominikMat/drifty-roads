@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=4 uid="uid://uuqteqwet680"]
+
+[ext_resource type="TileSet" uid="uid://dyo6o23gnmll3" path="res://Roads/TrackTileset.tres" id="1_g5wt6"]
+[ext_resource type="Script" uid="uid://cow56k5068tvo" path="res://Code/MapGenerator.gd" id="2_0hrkl"]
+
+[node name="RoadPattern" type="Node2D"]
+
+[node name="Tilemap" type="TileMapLayer" parent="."]
+z_index = -10
+use_parent_material = true
+scale = Vector2(48, 48)
+tile_map_data = PackedByteArray("AAD+//7/AgABAAAAAAD+////AgABAAEAAAD+/wAAAgABAAAAAAD+/wEAAgABAAEAAAD///3/AgAAAAIAAAD///7/AgADAAMAAAD/////AgAEAAEAAAD//wAAAgAEAAIAAAD//wEAAgACAAMAAAAAAP3/AgAEAAIAAAAAAP7/AgABAAEAAAAAAP//AgAEAAAAAAAAAAAAAgAEAAAAAAAAAAEAAgACAAAAAAAAAAIAAgAAAAMAAAABAP7/AgACAAIAAAABAP//AgAEAAMAAAABAAAAAgADAAMAAAABAAEAAgADAAAAAAABAAIAAgADAAMAAAACAP7/AgACAAAAAAACAP//AgACAAEAAAA=")
+tile_set = ExtResource("1_g5wt6")
+script = ExtResource("2_0hrkl")
+
+[node name="RoadEntry" type="Marker2D" parent="."]
+position = Vector2(1162, 2289)
+
+[node name="RoadExit" type="Marker2D" parent="."]
+position = Vector2(393, -2280)
